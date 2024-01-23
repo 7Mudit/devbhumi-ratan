@@ -7,7 +7,7 @@ import {
   SheetClose,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
+import ProductData from "../../constants/Productdata";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -35,20 +35,6 @@ export const sidebarLinks: SidebarLink[] = [
   },
 ];
 
-const Products = [
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-  "Product1",
-];
 const NavContent = () => {
   const pathname = usePathname();
 
@@ -89,13 +75,16 @@ const NavContent = () => {
 const Navbar = () => {
   return (
     <div className="h-[100px] w-full py-20  flex flex-row px-6 md:px-12 lg:px-16 xl:px-24 justify-between items-center">
-      <Image
-        src="/images/logo.png"
-        width={80}
-        height={80}
-        className=""
-        alt="Ratan Herbs"
-      />
+      <Link href="/">
+        <Image
+          src="/images/logo.png"
+          width={80}
+          height={80}
+          className=""
+          alt="Ratan Herbs"
+        />
+      </Link>
+
       <div className="hidden sm:flex flex-row gap-[40px]">
         {sidebarLinks.map((item: any) => (
           <div
@@ -109,14 +98,14 @@ const Navbar = () => {
                 >
                   <p>Products</p>
                   {/* <BsChevronDown size={8} /> */}
-                  <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] items-center justify-center h-[400px] custom-scrollbar  overflow-y-scroll   translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-gray-200 px-4 py-6  opacity-0 gap-5  transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[200px]">
+                  <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] items-center justify-center h-[400px] custom-scrollbar  overflow-y-scroll   translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-gray-200 px-4 py-6  opacity-0 gap-5  transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100  lg:w-[200px]">
                     {/* <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-gray-200"></div> */}
-                    {Products.map((item, index) => (
+                    {ProductData.map((item, index) => (
                       <div
-                        className="text-gray-500 hover:scale-95 hover:text-black transition-all duration-300"
+                        className="text-gray-500 hover:scale-95 hover:text-black capitalize transition-all duration-300 first:mt-10"
                         key={index}
                       >
-                        {item}
+                        {item.name}
                       </div>
                     ))}
                   </div>

@@ -21,9 +21,9 @@ const AboutUs = () => {
           alt="about-us"
         />
         <div
-          className={`${noto_sans2.className} leading-normal text-justify text-gray-700`}
+          className={`${noto_sans2.className} leading-normal text-justify w-full  text-gray-700`}
         >
-          <p>
+          <p className="first-letter:text-[24px] leading-[26px]">
             Established in 1984. Devbhumi Ratan Herbal is a tapestry woven with
             threads of tradition, innovation and a profound respect for nature.
             Rooted in the lap of Himalayas, our journey began with a vision to
